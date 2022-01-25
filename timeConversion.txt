@@ -17,7 +17,7 @@ START
   END WHILE
 
 OUTPUT 
-  "Elapsed time: "
+  "Elapsed time: " +
   weeks + " weeks," + 
   days + " days," + 
   hours + " hours," +
