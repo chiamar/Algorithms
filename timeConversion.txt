@@ -1,0 +1,27 @@
+START
+  PROMPT integer elapsed time in second
+  INPUT integer in seconds [12.500]
+  1. WHILE input > 60
+    input / 60 (seconds --> minutes)          [208,33333]
+      VAR minutes = Math.floor(input/60)      [208]
+      VAR seconds = input % 60                [20]
+      2. WHILE input > 60
+        VAR hours = Math.floor(minutes/60)    [3]
+        VAR minutes = minutes % 60            [28]
+        3. WHILE input > 24
+          VAR days = Math.floor(hours/24)
+          VAR hours = hours % 24
+          4. WHILE input > 7
+            VAR weeks = Math.floor(days/7)
+            VAR days = days % 7
+  END WHILE
+
+OUTPUT 
+  "Elapsed time: "
+  weeks + " weeks," + 
+  days + " days," + 
+  hours + " hours," +
+  minutes + " minutes," +
+  seconds + " seconds"
+
+END
