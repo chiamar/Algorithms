@@ -1,0 +1,62 @@
+START
+  PROMPT integer amount of money to withdraw
+  LOOP start
+    INPUT integer in multiples of 10 [280]
+    CHECK valid user input (>= 10, mult10, <=400)
+    IF FALSE
+      SHOW Error message
+      LOOP BACK to PROMPT
+    ELSE
+
+  VAR Remainder = "0"
+
+  IF 100€ Available
+    1. VAR EUR100 = Math.floor(input/100)     [2]
+     Remainder = input % 100                  [80]
+
+  IF 50€ Available
+    2. VAR EUR 50 = Math.floor(Remainder/50)  [1]
+    Remainder = Remainder % 50                [30]
+      
+ IF 20€ Available
+    3. VAR EUR 20 = Math.floor(Remainder/20)  [1]
+     Remainder = Remainder % 20               [1]
+
+     ELSE
+      SEND message to bank for refill
+
+ IF 10€ Available
+    4. VAR EUR 10 = Math.floor(Remainder/10)  [1]
+    
+    ELSE 
+      OUTPUT "Choose different amount, no 10€ notes available"
+      SEND message to bank for refill
+      LOOP BACK to prompt
+
+OUTPUT 
+  EUR100 x 100€
+  EUR50 x 50€
+  EUR20 x 20€
+  EUR10 x 10€
+
+END
+
+
+
+10 = 10
+20 = 20
+30 = 20+10
+40 = 20*2
+50 = 50
+60 = 50+10
+70 = 50+20
+80 = 50+20+10
+90 = 50+20*2
+100 = 100
+
+
+
+No 10€ xx 10 30 
+No 20€ 
+No 50€
+No 100€
