@@ -1,0 +1,17 @@
+START
+DEFINE integer N
+GENERATE random integer 1 ... N
+REPEAT
+	INPUT random integer
+	IF input === integer
+		OUTPUT "Correct answer"
+	ELSE input !== integer
+		IF input < integer
+			OUTPUT "My number is higher, guess again"
+		ELSE
+			OUTPUT "My number is lower, guess again"
+		END IF
+	END IF
+	REPEAT until integer correct
+END REPEAT
+END
